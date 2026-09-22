@@ -1,38 +1,31 @@
-# Program 08 — Constructor and Destructor Order
+# Program 08
 
 ## Aim
-Shows base construction before derived construction and reverse destruction order.
+To observe the order in which constructors and destructors execute for a derived object.
 
-## Concept
-This program demonstrates **Constructor and Destructor Order** as part of Unit II: Inheritance.
+## Problem Statement
+Create a Base class with a constructor and destructor and derive Derived from it with its own constructor and destructor. Create one Derived object and observe the printed sequence.
 
-## Source File
-`8. Constructor-destructor order.cpp`
+## Concepts Used
+- Constructors
+- Destructors
+- Inheritance
+- Object lifetime
+- Construction order
+- Destruction order
 
-## C++ Standard
-C++17 or later.
+## Sample Input
+Creating object invokes Base constructor followed by Derived constructor. When main() ends, the object is destroyed automatically, causing Derived destructor to run first and Base destructor second.
 
-## Compile
-```bash
-g++ -std=c++17 8. Constructor-destructor order.cpp -o program08
+## Sample Output
+```text
+Base constructor
+Derived constructor
+Derived destructor
+Base destructor
 ```
 
-## Run
-```bash
-./program08
-```
+## Explanation
+When a Derived object is created, the Base part must be constructed before the Derived part, so the Base constructor runs first. During destruction, the order is reversed: the Derived destructor runs before the Base destructor. The program prints messages from each special member function so the lifecycle can be observed directly.
 
-### Windows / MinGW
-```bash
-g++ -std=c++17 8. Constructor-destructor order.cpp -o program08.exe
-program08.exe
-```
 
-## What to Understand
-- Identify the classes involved.
-- Identify which class is the base and which is derived, where applicable.
-- Understand why the selected inheritance/OOP mechanism is used.
-- Trace the important function calls and constructor calls before modifying the program.
-
-## Customization
-The example data, names and internal structure are intentionally written for this repository. You can change the input values and extend the classes after understanding the program.

@@ -1,38 +1,28 @@
-# Program 11 — Abstract Class
+# Program 11
 
 ## Aim
-Creates an abstract Shape base class and implements area in Rectangle and Circle.
+To create an abstract base class using a pure virtual function and implement that function in concrete derived classes.
 
-## Concept
-This program demonstrates **Abstract Class** as part of Unit II: Inheritance.
+## Problem Statement
+Define Shape with a pure virtual area() function. Derive Rectangle and Circle and implement area() differently for each shape. Create objects of the concrete classes and display their areas.
 
-## Source File
-`11. Abstract class.cpp`
+## Concepts Used
+- Abstract class
+- Pure virtual function
+- Inheritance
+- Function overriding
+- Polymorphic interface
+- Constructors
 
-## C++ Standard
-C++17 or later.
+## Sample Input
+The program creates a Rectangle with length 5 and width 3 and a Circle with radius 2. Calling area() on each concrete object uses that class's implementation. Shape itself cannot be instantiated because it has a pure virtual function.
 
-## Compile
-```bash
-g++ -std=c++17 11. Abstract class.cpp -o program11
+## Sample Output
+```text
+Rectangle Area: 15
+Circle Area: 12.5664
 ```
 
-## Run
-```bash
-./program11
-```
+## Explanation
+Shape contains area() = 0, making Shape abstract and preventing direct instantiation. Rectangle implements area as length × width, while Circle implements area using π × radius². Both classes override the same interface with their own calculations.
 
-### Windows / MinGW
-```bash
-g++ -std=c++17 11. Abstract class.cpp -o program11.exe
-program11.exe
-```
-
-## What to Understand
-- Identify the classes involved.
-- Identify which class is the base and which is derived, where applicable.
-- Understand why the selected inheritance/OOP mechanism is used.
-- Trace the important function calls and constructor calls before modifying the program.
-
-## Customization
-The example data, names and internal structure are intentionally written for this repository. You can change the input values and extend the classes after understanding the program.

@@ -1,38 +1,27 @@
-# Program 10 — Function Overriding
+# Program 10
 
 ## Aim
-Demonstrates overriding of a virtual function in derived classes.
+To demonstrate run-time polymorphism by overriding a virtual member function in derived classes.
 
-## Concept
-This program demonstrates **Function Overriding** as part of Unit II: Inheritance.
+## Problem Statement
+Create Vehicle with a virtual move() function. Derive Car and Boat and provide their own move() implementations using override.
 
-## Source File
-`10. Function overriding.cpp`
+## Concepts Used
+- Virtual function
+- Function overriding
+- override keyword
+- Inheritance
+- Run-time polymorphism
 
-## C++ Standard
-C++17 or later.
+## Sample Input
+The program creates separate Car and Boat objects and calls their move() functions. Each object executes its corresponding overridden implementation, producing different behavior from the same conceptual operation.
 
-## Compile
-```bash
-g++ -std=c++17 10. Function overriding.cpp -o program10
+## Sample Output
+```text
+Car moves on roads
+Boat moves on water
 ```
 
-## Run
-```bash
-./program10
-```
+## Explanation
+Vehicle defines move() as virtual, allowing derived classes to provide specialized implementations. Car overrides it for road movement and Boat overrides it for water movement. The override keyword asks the compiler to verify that the derived function correctly overrides a virtual base function.
 
-### Windows / MinGW
-```bash
-g++ -std=c++17 10. Function overriding.cpp -o program10.exe
-program10.exe
-```
-
-## What to Understand
-- Identify the classes involved.
-- Identify which class is the base and which is derived, where applicable.
-- Understand why the selected inheritance/OOP mechanism is used.
-- Trace the important function calls and constructor calls before modifying the program.
-
-## Customization
-The example data, names and internal structure are intentionally written for this repository. You can change the input values and extend the classes after understanding the program.

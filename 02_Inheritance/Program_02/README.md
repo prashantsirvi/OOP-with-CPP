@@ -1,38 +1,28 @@
-# Program 02 — Protected Member Access
+# Program 02
 
 ## Aim
-Shows how a derived class directly uses a protected member inherited from its base class.
+To demonstrate how a derived class can directly access a protected data member inherited from its base class.
 
-## Concept
-This program demonstrates **Protected Member Access** as part of Unit II: Inheritance.
+## Problem Statement
+Define Employee with a protected name member. Derive Developer from Employee, store a programming language in the derived class, and display both values from a Developer member function.
 
-## Source File
-`2. Protected members.cpp`
+## Concepts Used
+- Class and object
+- Inheritance
+- Protected access specifier
+- Derived-class access
+- Constructors
+- Encapsulation
 
-## C++ Standard
-C++17 or later.
+## Sample Input
+The program constructs a Developer with a name and programming language. The display() function prints the inherited protected name and the derived language value.
 
-## Compile
-```bash
-g++ -std=c++17 2. Protected members.cpp -o program02
+## Sample Output
+```text
+Developer: Prashant
+Language: C++
 ```
 
-## Run
-```bash
-./program02
-```
+## Explanation
+Employee keeps name protected so it is inaccessible through ordinary outside code but remains available to Employee and its derived classes. Developer inherits Employee and accesses name directly inside display(). The derived class also owns language as private data. This illustrates why protected access is useful when derived classes need controlled access to base-class state.
 
-### Windows / MinGW
-```bash
-g++ -std=c++17 2. Protected members.cpp -o program02.exe
-program02.exe
-```
-
-## What to Understand
-- Identify the classes involved.
-- Identify which class is the base and which is derived, where applicable.
-- Understand why the selected inheritance/OOP mechanism is used.
-- Trace the important function calls and constructor calls before modifying the program.
-
-## Customization
-The example data, names and internal structure are intentionally written for this repository. You can change the input values and extend the classes after understanding the program.

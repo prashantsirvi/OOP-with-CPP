@@ -1,38 +1,26 @@
-# Program 03 — Public vs Private Inheritance
+# Program 03
 
 ## Aim
-Compares accessibility of a public base member under public and private inheritance.
+To observe the difference between public and private inheritance and how the inheritance mode affects access to a base-class public member.
 
-## Concept
-This program demonstrates **Public vs Private Inheritance** as part of Unit II: Inheritance.
+## Problem Statement
+Create a Base class with a public show() function. Derive one class publicly and another privately. Call show() directly through the public-derived object and through a wrapper member function in the private-derived class.
 
-## Source File
-`3. Public-private inheritance.cpp`
+## Concepts Used
+- Public inheritance
+- Private inheritance
+- Access control
+- Base and derived classes
+- Member functions
 
-## C++ Standard
-C++17 or later.
+## Sample Input
+Two objects are created. publicObject.show() is valid because the inheritance is public. privateObject.callBaseShow() is used because show() is private through private inheritance. The commented direct call demonstrates the access error without preventing compilation.
 
-## Compile
-```bash
-g++ -std=c++17 3. Public-private inheritance.cpp -o program03
+## Sample Output
+```text
+Base public function
+Base public function
 ```
 
-## Run
-```bash
-./program03
-```
-
-### Windows / MinGW
-```bash
-g++ -std=c++17 3. Public-private inheritance.cpp -o program03.exe
-program03.exe
-```
-
-## What to Understand
-- Identify the classes involved.
-- Identify which class is the base and which is derived, where applicable.
-- Understand why the selected inheritance/OOP mechanism is used.
-- Trace the important function calls and constructor calls before modifying the program.
-
-## Customization
-The example data, names and internal structure are intentionally written for this repository. You can change the input values and extend the classes after understanding the program.
+## Explanation
+PublicDerived inherits Base publicly, so Base::show() remains public when accessed through a PublicDerived object. PrivateDerived inherits Base privately, so the inherited public member becomes private in PrivateDerived and cannot be called directly from outside. The class therefore provides callBaseShow() as a public member that internally calls show().

@@ -1,38 +1,37 @@
-# Program 15 — Mini Project - Vehicle Rental System
+# Program 15
 
 ## Aim
-Integrates inheritance, overriding and polymorphism into a small vehicle-rental example.
+To build a small inheritance-based vehicle rental system in which different vehicle types can share common details while customizing behavior.
 
-## Concept
-This program demonstrates **Mini Project - Vehicle Rental System** as part of Unit II: Inheritance.
+## Problem Statement
+Create Vehicle with registration number and daily rental rate. Derive Car and Bike with additional attributes. Override calculateRent() for Bike and override display() in both derived classes. Calculate three-day rental charges.
 
-## Source File
-`15. Vehicle rental mini-project.cpp`
+## Concepts Used
+- Inheritance
+- Function overriding
+- Virtual functions
+- Constructors
+- Base-class behavior
+- Mini-project design
+- Run-time polymorphism concepts
 
-## C++ Standard
-C++17 or later.
+## Sample Input
+The program creates a Car costing 2000 per day and a Bike costing 800 per day. For three days, the car costs 6000. The bike's normal total is 2400, but its overridden calculation applies a 0.9 factor, producing 2160. The output also shows each vehicle's specific details.
 
-## Compile
-```bash
-g++ -std=c++17 15. Vehicle rental mini-project.cpp -o program15
+## Sample Output
+```text
+Car Details
+Registration: MH12AB1234
+Rate per day: 2000
+Doors: 5
+Rent for 3 days: 6000
+
+Bike Details
+Registration: MH12CD5678
+Rate per day: 800
+Engine Capacity: 150 cc
+Rent for 3 days: 2160
 ```
 
-## Run
-```bash
-./program15
-```
-
-### Windows / MinGW
-```bash
-g++ -std=c++17 15. Vehicle rental mini-project.cpp -o program15.exe
-program15.exe
-```
-
-## What to Understand
-- Identify the classes involved.
-- Identify which class is the base and which is derived, where applicable.
-- Understand why the selected inheritance/OOP mechanism is used.
-- Trace the important function calls and constructor calls before modifying the program.
-
-## Customization
-The example data, names and internal structure are intentionally written for this repository. You can change the input values and extend the classes after understanding the program.
+## Explanation
+Vehicle stores common registration and rate information and provides virtual calculateRent() and display() functions. Car adds numberOfDoors and extends display(). Bike adds engineCapacity and overrides calculateRent() to apply a 10 percent reduction. Both derived classes reuse Vehicle::display() before showing their own details.

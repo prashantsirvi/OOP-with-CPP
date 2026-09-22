@@ -1,38 +1,29 @@
-# Program 05 — Hierarchical Inheritance
+# Program 05
 
 ## Aim
-Uses Vehicle as a common base for Car and Bike.
+To implement hierarchical inheritance in which multiple derived classes share a common Vehicle base class.
 
-## Concept
-This program demonstrates **Hierarchical Inheritance** as part of Unit II: Inheritance.
+## Problem Statement
+Create Vehicle with a registration number and start() function. Derive Car and Bike from Vehicle, giving each derived class its own specialized function. Create objects of both derived classes and invoke common and specialized behavior.
 
-## Source File
-`5. Hierarchical inheritance.cpp`
+## Concepts Used
+- Hierarchical inheritance
+- Common base class
+- Public inheritance
+- Protected member
+- Constructors
+- Specialized member functions
 
-## C++ Standard
-C++17 or later.
+## Sample Input
+The program creates one Car and one Bike with different registration numbers. Each object first uses the inherited start() function and then invokes its own specialized operation.
 
-## Compile
-```bash
-g++ -std=c++17 5. Hierarchical inheritance.cpp -o program05
+## Sample Output
+```text
+Vehicle MH12AB1234 started
+Car boot opened
+Vehicle MH12CD5678 started
+Please wear a helmet
 ```
 
-## Run
-```bash
-./program05
-```
-
-### Windows / MinGW
-```bash
-g++ -std=c++17 5. Hierarchical inheritance.cpp -o program05.exe
-program05.exe
-```
-
-## What to Understand
-- Identify the classes involved.
-- Identify which class is the base and which is derived, where applicable.
-- Understand why the selected inheritance/OOP mechanism is used.
-- Trace the important function calls and constructor calls before modifying the program.
-
-## Customization
-The example data, names and internal structure are intentionally written for this repository. You can change the input values and extend the classes after understanding the program.
+## Explanation
+Vehicle is the common base class. Both Car and Bike inherit from it independently, so each derived object receives the common registration data and start() behavior. Car adds openBoot(), while Bike adds helmetReminder(). This is hierarchical inheritance because one base class has multiple direct derived classes.

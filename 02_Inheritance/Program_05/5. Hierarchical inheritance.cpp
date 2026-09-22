@@ -1,33 +1,34 @@
 #include <iostream>
 #include <string>
+using namespace std;
 
 class Vehicle {
 protected:
-    std::string registration;
+    string registration;
 
 public:
-    explicit Vehicle(const std::string& number) : registration(number) {}
+    explicit Vehicle(const string& number) : registration(number) {}
 
     void start() const {
-        std::cout << "Vehicle " << registration << " started\n";
+        cout << "Vehicle " << registration << " started\n";
     }
 };
 
 class Car : public Vehicle {
 public:
-    explicit Car(const std::string& number) : Vehicle(number) {}
+    explicit Car(const string& number) : Vehicle(number) {}
 
     void openBoot() const {
-        std::cout << "Car boot opened\n";
+        cout << "Car boot opened\n";
     }
 };
 
 class Bike : public Vehicle {
 public:
-    explicit Bike(const std::string& number) : Vehicle(number) {}
+    explicit Bike(const string& number) : Vehicle(number) {}
 
     void helmetReminder() const {
-        std::cout << "Please wear a helmet\n";
+        cout << "Please wear a helmet\n";
     }
 };
 

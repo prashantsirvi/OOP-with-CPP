@@ -1,38 +1,25 @@
-# Program 14 — Nested Class
+# Program 14
 
 ## Aim
-Creates a Department class nested inside a University class.
+To create and use a class declared inside another class.
 
-## Concept
-This program demonstrates **Nested Class** as part of Unit II: Inheritance.
+## Problem Statement
+Define University as an outer class containing a public nested Department class. Construct Department using its qualified name and display the stored department name.
 
-## Source File
-`14. Nested class.cpp`
+## Concepts Used
+- Nested class
+- Inner/nested type
+- Scope resolution
+- Encapsulation
+- Constructors
 
-## C++ Standard
-C++17 or later.
+## Sample Input
+The program constructs a Department object using the qualified type name University::Department and passes the department name to its constructor. display() then prints the stored name.
 
-## Compile
-```bash
-g++ -std=c++17 14. Nested class.cpp -o program14
+## Sample Output
+```text
+Department: Artificial Intelligence and Data Science
 ```
 
-## Run
-```bash
-./program14
-```
-
-### Windows / MinGW
-```bash
-g++ -std=c++17 14. Nested class.cpp -o program14.exe
-program14.exe
-```
-
-## What to Understand
-- Identify the classes involved.
-- Identify which class is the base and which is derived, where applicable.
-- Understand why the selected inheritance/OOP mechanism is used.
-- Trace the important function calls and constructor calls before modifying the program.
-
-## Customization
-The example data, names and internal structure are intentionally written for this repository. You can change the input values and extend the classes after understanding the program.
+## Explanation
+Department is declared inside University, making it a nested class. Because Department is public, code outside University can refer to it using University::Department. The nested class has its own private name member, constructor, and display() function. The nesting expresses a logical relationship between the two types.

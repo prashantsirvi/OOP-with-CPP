@@ -1,38 +1,28 @@
-# Program 07 — Resolving Multiple-Inheritance Ambiguity
+# Program 07
 
 ## Aim
-Uses scope resolution to select between identically named functions in two base classes.
+To resolve ambiguity when two base classes provide member functions with the same name.
 
-## Concept
-This program demonstrates **Resolving Multiple-Inheritance Ambiguity** as part of Unit II: Inheritance.
+## Problem Statement
+Define Academic and Sports with identically named display() functions. Derive Student from both classes and explicitly identify the required base-class function using the scope-resolution operator.
 
-## Source File
-`7. Multiple-inheritance ambiguity.cpp`
+## Concepts Used
+- Multiple inheritance
+- Name ambiguity
+- Scope-resolution operator
+- Base-class qualification
+- Member functions
 
-## C++ Standard
-C++17 or later.
+## Sample Input
+The program first calls each base-class display() directly with qualification, then calls displayAll() to show both messages again. The qualified calls demonstrate exactly how C++ resolves the ambiguity.
 
-## Compile
-```bash
-g++ -std=c++17 7. Multiple-inheritance ambiguity.cpp -o program07
+## Sample Output
+```text
+Academic information
+Sports information
+Academic information
+Sports information
 ```
 
-## Run
-```bash
-./program07
-```
-
-### Windows / MinGW
-```bash
-g++ -std=c++17 7. Multiple-inheritance ambiguity.cpp -o program07.exe
-program07.exe
-```
-
-## What to Understand
-- Identify the classes involved.
-- Identify which class is the base and which is derived, where applicable.
-- Understand why the selected inheritance/OOP mechanism is used.
-- Trace the important function calls and constructor calls before modifying the program.
-
-## Customization
-The example data, names and internal structure are intentionally written for this repository. You can change the input values and extend the classes after understanding the program.
+## Explanation
+Both Academic and Sports define display(). Because Student inherits from both, an unqualified call such as student.display() would be ambiguous. The program resolves this by writing Academic::display() or Sports::display(). Student also provides displayAll(), which explicitly calls both base implementations.

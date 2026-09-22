@@ -1,38 +1,29 @@
-# Program 01 — Basic Single Inheritance
+# Program 01
 
 ## Aim
-Demonstrates a Person base class and Student derived class.
+To implement single inheritance by deriving a Student class from a Person base class and displaying inherited and derived-class information.
 
-## Concept
-This program demonstrates **Basic Single Inheritance** as part of Unit II: Inheritance.
+## Problem Statement
+Create a base class named Person containing a name. Derive Student publicly from Person, add a roll number, create a Student object, and display both the inherited name and the student's roll number.
 
-## Source File
-`1. Single inheritance.cpp`
+## Concepts Used
+- Class and object
+- Single inheritance
+- Base and derived classes
+- Public inheritance
+- Protected data member
+- Constructor and member function
 
-## C++ Standard
-C++17 or later.
+## Sample Input
+The program creates a Student object with a name and roll number and displays the two values. The input values are fixed in main rather than read interactively.
 
-## Compile
-```bash
-g++ -std=c++17 1. Single inheritance.cpp -o program01
+## Sample Output
+```text
+Name: Prashant
+Roll Number: 33
 ```
 
-## Run
-```bash
-./program01
-```
+## Explanation
+The Person class stores the common name data. Student inherits from Person using public inheritance and adds rollNumber as its own data member. The Student constructor first initializes the Person part and then initializes rollNumber. displayStudent() calls the inherited displayName() function and then prints the derived-class information. This demonstrates the is-a relationship: a Student is a Person.
 
-### Windows / MinGW
-```bash
-g++ -std=c++17 1. Single inheritance.cpp -o program01.exe
-program01.exe
-```
 
-## What to Understand
-- Identify the classes involved.
-- Identify which class is the base and which is derived, where applicable.
-- Understand why the selected inheritance/OOP mechanism is used.
-- Trace the important function calls and constructor calls before modifying the program.
-
-## Customization
-The example data, names and internal structure are intentionally written for this repository. You can change the input values and extend the classes after understanding the program.

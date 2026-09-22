@@ -1,38 +1,27 @@
-# Program 12 — Virtual Base Class and Diamond Inheritance
+# Program 12
 
 ## Aim
-Uses virtual inheritance so TeachingAssistant contains only one Person subobject.
+To solve the duplicate-base problem in diamond inheritance by making Person a virtual base class.
 
-## Concept
-This program demonstrates **Virtual Base Class and Diamond Inheritance** as part of Unit II: Inheritance.
+## Problem Statement
+Create Person as the common base, derive Student and Employee virtually from Person, and derive TeachingAssistant from both. Initialize the shared Person part from the most-derived class.
 
-## Source File
-`12. Virtual base-diamond inheritance.cpp`
+## Concepts Used
+- Diamond inheritance
+- Virtual base class
+- Multiple inheritance
+- Constructor initialization
+- Shared base subobject
+- Ambiguity prevention
 
-## C++ Standard
-C++17 or later.
+## Sample Input
+A TeachingAssistant object is created with the name Riya. Even though two inheritance paths lead to Person, displayName() refers to the single shared Person part, so the name is printed once without duplicate-base ambiguity.
 
-## Compile
-```bash
-g++ -std=c++17 12. Virtual base-diamond inheritance.cpp -o program12
+## Sample Output
+```text
+Name: Riya
 ```
 
-## Run
-```bash
-./program12
-```
+## Explanation
+Student and Employee both virtually inherit Person. TeachingAssistant inherits from both Student and Employee, forming a diamond. Virtual inheritance ensures TeachingAssistant contains only one Person subobject instead of two. Because TeachingAssistant is the most-derived class, its constructor initializes the virtual Person base with the required name.
 
-### Windows / MinGW
-```bash
-g++ -std=c++17 12. Virtual base-diamond inheritance.cpp -o program12.exe
-program12.exe
-```
-
-## What to Understand
-- Identify the classes involved.
-- Identify which class is the base and which is derived, where applicable.
-- Understand why the selected inheritance/OOP mechanism is used.
-- Trace the important function calls and constructor calls before modifying the program.
-
-## Customization
-The example data, names and internal structure are intentionally written for this repository. You can change the input values and extend the classes after understanding the program.

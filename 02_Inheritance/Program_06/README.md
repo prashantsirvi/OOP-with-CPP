@@ -1,38 +1,29 @@
-# Program 06 — Multiple Inheritance
+# Program 06
 
 ## Aim
-Combines academic and sports records through multiple inheritance.
+To demonstrate multiple inheritance by combining academic and sports records in a single Student class.
 
-## Concept
-This program demonstrates **Multiple Inheritance** as part of Unit II: Inheritance.
+## Problem Statement
+Create Academic and Sports as two independent base classes, each containing marks. Derive Student from both classes and calculate the combined total.
 
-## Source File
-`6. Multiple inheritance.cpp`
+## Concepts Used
+- Multiple inheritance
+- Two base classes
+- Protected members
+- Constructor initialization
+- Code reuse
+- Derived-class access
 
-## C++ Standard
-C++17 or later.
+## Sample Input
+The Student constructor initializes both base classes using an initializer list. main() displays academic marks, sports marks, and their combined total.
 
-## Compile
-```bash
-g++ -std=c++17 6. Multiple inheritance.cpp -o program06
+## Sample Output
+```text
+Academic Marks: 80
+Sports Marks: 15
+Total Marks: 95
 ```
 
-## Run
-```bash
-./program06
-```
+## Explanation
+Academic stores academicMarks and Sports stores sportsMarks. Student inherits publicly from both base classes, so one Student object contains the state and behavior supplied by both. Its showTotal() member can access the protected marks from both parents and add them together.
 
-### Windows / MinGW
-```bash
-g++ -std=c++17 6. Multiple inheritance.cpp -o program06.exe
-program06.exe
-```
-
-## What to Understand
-- Identify the classes involved.
-- Identify which class is the base and which is derived, where applicable.
-- Understand why the selected inheritance/OOP mechanism is used.
-- Trace the important function calls and constructor calls before modifying the program.
-
-## Customization
-The example data, names and internal structure are intentionally written for this repository. You can change the input values and extend the classes after understanding the program.

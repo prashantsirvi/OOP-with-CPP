@@ -1,38 +1,26 @@
-# Program 09 — Parameterized Base Constructor
+# Program 09
 
 ## Aim
-Initializes a parameterized base-class constructor from a derived-class constructor.
+To initialize a parameterized base class constructor from a derived-class constructor.
 
-## Concept
-This program demonstrates **Parameterized Base Constructor** as part of Unit II: Inheritance.
+## Problem Statement
+Create Person with a constructor that accepts a name. Derive Student with a roll number and use the initializer list to pass the student name to Person.
 
-## Source File
-`9. Parameterized base constructor.cpp`
+## Concepts Used
+- Parameterized constructor
+- Constructor initializer list
+- Inheritance
+- Base-class constructor
+- Derived-class constructor
 
-## C++ Standard
-C++17 or later.
+## Sample Input
+A Student object is constructed using a name and roll number. The derived constructor forwards the name to Person and initializes the roll number itself. display() then prints both values.
 
-## Compile
-```bash
-g++ -std=c++17 9. Parameterized base constructor.cpp -o program09
+## Sample Output
+```text
+Name: Kiran
+Roll Number: 24
 ```
 
-## Run
-```bash
-./program09
-```
-
-### Windows / MinGW
-```bash
-g++ -std=c++17 9. Parameterized base constructor.cpp -o program09.exe
-program09.exe
-```
-
-## What to Understand
-- Identify the classes involved.
-- Identify which class is the base and which is derived, where applicable.
-- Understand why the selected inheritance/OOP mechanism is used.
-- Trace the important function calls and constructor calls before modifying the program.
-
-## Customization
-The example data, names and internal structure are intentionally written for this repository. You can change the input values and extend the classes after understanding the program.
+## Explanation
+Person requires a string argument in its constructor, so Student must explicitly invoke Person(std::move(studentName)) in its initializer list. Student then initializes its own rollNumber. This demonstrates how a derived constructor supplies values required by a parameterized base constructor.

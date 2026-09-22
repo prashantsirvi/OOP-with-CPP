@@ -1,38 +1,25 @@
-# Program 13 — Friend Class
+# Program 13
 
 ## Aim
-Demonstrates a friend class accessing private data of another class.
+To demonstrate how a friend class can access private data of another class when explicit friendship is granted.
 
-## Concept
-This program demonstrates **Friend Class** as part of Unit II: Inheritance.
+## Problem Statement
+Create Account with a private balance and declare Auditor as a friend class. Let Auditor inspect and print the private balance.
 
-## Source File
-`13. Friend class.cpp`
+## Concepts Used
+- Friend class
+- Private data
+- Access permission
+- Classes and objects
+- Encapsulation
 
-## C++ Standard
-C++17 or later.
+## Sample Input
+The program creates an Account with an initial balance of 5000. An Auditor object receives the Account by const reference and prints the private balance using its friendship privilege.
 
-## Compile
-```bash
-g++ -std=c++17 13. Friend class.cpp -o program13
+## Sample Output
+```text
+Account Balance: 5000
 ```
 
-## Run
-```bash
-./program13
-```
-
-### Windows / MinGW
-```bash
-g++ -std=c++17 13. Friend class.cpp -o program13.exe
-program13.exe
-```
-
-## What to Understand
-- Identify the classes involved.
-- Identify which class is the base and which is derived, where applicable.
-- Understand why the selected inheritance/OOP mechanism is used.
-- Trace the important function calls and constructor calls before modifying the program.
-
-## Customization
-The example data, names and internal structure are intentionally written for this repository. You can change the input values and extend the classes after understanding the program.
+## Explanation
+Account keeps balance private, preventing ordinary external access. The declaration friend class Auditor grants Auditor special access to Account's private members. Auditor::inspect() can therefore read account.balance directly. Friendship is a deliberate exception to normal access control and should be used only when the design requires it.

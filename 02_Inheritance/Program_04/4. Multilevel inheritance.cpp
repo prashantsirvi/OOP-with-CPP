@@ -1,15 +1,16 @@
 #include <iostream>
 #include <string>
+using namespace std;
 
 class Person {
 protected:
-    std::string name;
+    string name;
 
 public:
-    explicit Person(const std::string& personName) : name(personName) {}
+    explicit Person(const string& personName) : name(personName) {}
 
     void showPerson() const {
-        std::cout << "Name: " << name << '\n';
+        cout << "Name: " << name << '\n';
     }
 };
 
@@ -18,11 +19,11 @@ protected:
     int id;
 
 public:
-    Employee(const std::string& employeeName, int employeeId)
+    Employee(const string& employeeName, int employeeId)
         : Person(employeeName), id(employeeId) {}
 
     void showEmployee() const {
-        std::cout << "Employee ID: " << id << '\n';
+        cout << "Employee ID: " << id << '\n';
     }
 };
 
@@ -31,13 +32,13 @@ private:
     int members;
 
 public:
-    Manager(const std::string& managerName, int employeeId, int teamMembers)
+    Manager(const string& managerName, int employeeId, int teamMembers)
         : Employee(managerName, employeeId), members(teamMembers) {}
 
     void showManager() const {
         showPerson();
         showEmployee();
-        std::cout << "Team Size: " << members << '\n';
+        cout << "Team Size: " << members << '\n';
     }
 };
 

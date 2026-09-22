@@ -1,38 +1,33 @@
-# Program 16 — Mini Project - Employee Payroll System
+# Program 16
 
 ## Aim
-Uses an abstract Employee base class with different salary calculations for permanent and contract employees.
+To develop a small payroll system using an abstract Employee base class and different salary calculations in derived classes.
 
-## Concept
-This program demonstrates **Mini Project - Employee Payroll System** as part of Unit II: Inheritance.
+## Problem Statement
+Create an abstract Employee class with common employee details and a pure virtual calculateSalary(). Derive PermanentEmployee and ContractEmployee with different salary formulas, then print pay slips through a base-class reference.
 
-## Source File
-`16. Employee payroll mini-project.cpp`
+## Concepts Used
+- Abstract class
+- Pure virtual function
+- Inheritance
+- Function overriding
+- Polymorphic base reference
+- Constructors
+- Encapsulation
 
-## C++ Standard
-C++17 or later.
+## Sample Input
+The program creates one permanent employee with a basic salary of 40000 and an allowance of 8000, producing 48000. It also creates a contract employee paid 500 per hour for 80 hours, producing 40000. displayPaySlip() calls the common detail function and the appropriate overridden salary calculation for each object.
 
-## Compile
-```bash
-g++ -std=c++17 16. Employee payroll mini-project.cpp -o program16
+## Sample Output
+```text
+Employee ID: 101
+Name: Asha
+Salary: 48000
+
+Employee ID: 102
+Name: Vikas
+Salary: 40000
 ```
 
-## Run
-```bash
-./program16
-```
-
-### Windows / MinGW
-```bash
-g++ -std=c++17 16. Employee payroll mini-project.cpp -o program16.exe
-program16.exe
-```
-
-## What to Understand
-- Identify the classes involved.
-- Identify which class is the base and which is derived, where applicable.
-- Understand why the selected inheritance/OOP mechanism is used.
-- Trace the important function calls and constructor calls before modifying the program.
-
-## Customization
-The example data, names and internal structure are intentionally written for this repository. You can change the input values and extend the classes after understanding the program.
+## Explanation
+Employee stores employeeId and name and declares calculateSalary() as pure virtual, so Employee is abstract. PermanentEmployee calculates salary as basic salary plus allowance. ContractEmployee calculates salary as hourly rate multiplied by hours worked. displayPaySlip() accepts an Employee reference, allowing both derived types to be handled through the same interface.

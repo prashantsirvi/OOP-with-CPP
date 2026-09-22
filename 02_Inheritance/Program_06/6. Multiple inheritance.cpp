@@ -1,4 +1,5 @@
 #include <iostream>
+using namespace std;
 
 class Academics {
 protected:
@@ -8,7 +9,7 @@ public:
     explicit Academics(int score) : marks(score) {}
 
     void showAcademicMarks() const {
-        std::cout << "Academic Marks: " << marks << '\n';
+        cout << "Academic Marks: " << marks << '\n';
     }
 };
 
@@ -20,7 +21,7 @@ public:
     explicit Sports(int points) : score(points) {}
 
     void showSportsScore() const {
-        std::cout << "Sports Marks: " << score << '\n';
+        cout << "Sports Marks: " << score << '\n';
     }
 };
 
@@ -30,7 +31,7 @@ public:
         : Academics(academicScore), Sports(sportsScore) {}
 
     void showCombinedScore() const {
-        std::cout << "Total Marks: " << marks + score << '\n';
+        cout << "Total Marks: " << marks + score << '\n';
     }
 };
 
